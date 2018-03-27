@@ -9,7 +9,7 @@ import Table, {
 import map from 'ramda/src/map'
 import {connect} from 'react-redux'
 
-export const Users = ({users}) =>
+export const UserList = ({users}) =>
   <div>
     <Table>
       {header()}
@@ -17,7 +17,7 @@ export const Users = ({users}) =>
     </Table>
   </div>
 
-Users.propTypes = {
+UserList.propTypes = {
   users: PropTypes.array.isRequired
 }
 
@@ -57,4 +57,4 @@ const renderUser = map(({id, name, status}) =>
 
 export default connect((state) => ({
   users: state.users
-}))(Users)
+}))(UserList)

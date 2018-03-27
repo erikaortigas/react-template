@@ -16,7 +16,7 @@
     "react",
     "stage-0"
   ],
-  "plugins": ["transform-inline-environment-variables"],
+  "plugins": ["transform-inline-environment-variables", "transform-class-properties"],
   "env": {
     "test": {
       "presets": [

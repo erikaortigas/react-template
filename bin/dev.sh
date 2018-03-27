@@ -41,7 +41,7 @@ watchMode() {
 
 buildMode() {
   if [ "$DEV_BUNDLER" == "parcel" ]; then
-    parcel build src/static/development.html -d dist --public-url ./
+    parcel build src/static/development.html -d dist --public-url /
     mv dist/development.html dist/index.html
   else
     webpack --progress

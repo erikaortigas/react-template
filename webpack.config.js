@@ -70,7 +70,8 @@ const plugins = [
 const devServer = {
   hot: true,
   port: 8080,
-  compress: true
+  compress: true,
+  historyApiFallback: true
 }
 
 module.exports = {
