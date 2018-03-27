@@ -46,10 +46,7 @@ const rules = [
   {
     test: /.jsx?$/,
     loader: 'babel-loader',
-    exclude: /node_modules/,
-    options: {
-      presets: [['env', {targets: {browsers: ['last 2 versions', 'safari >= 7']}, modules: false}], 'react', 'stage-0']
-    }
+    exclude: /node_modules/
   }
 ]
 
@@ -68,7 +65,7 @@ const plugins = [
   new webpack.NoEmitOnErrorsPlugin(),
   new webpack.DefinePlugin(config),
   new CopyWebpackPlugin([{
-    from: `src/static/${mode}.html`, to: 'index.html'
+    from: `src/static/${mode}-webpack.html`, to: 'index.html'
   }])
 ]
 
