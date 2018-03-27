@@ -3977,10 +3977,6 @@ inquirer@^5.1.0:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-install@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/install/-/install-0.11.0.tgz#e539d3c7db572ab5081d3780de20796dd3cc842e"
-
 internal-ip@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-1.2.0.tgz#ae9fbf93b984878785d50a8de1b356956058cf5c"
@@ -5817,7 +5813,7 @@ parallel-transform@^1.1.0:
     inherits "^2.0.3"
     readable-stream "^2.1.5"
 
-parcel-bundler@^1.6.2:
+parcel-bundler@1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/parcel-bundler/-/parcel-bundler-1.6.2.tgz#e415c4993b6f4c48cd410427594ce80bbb7d90f1"
   dependencies:
@@ -5874,7 +5870,7 @@ parcel-bundler@^1.6.2:
     worker-farm "^1.5.2"
     ws "^4.0.0"
 
-parcel-plugin-eslint@^1.0.3:
+parcel-plugin-eslint@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/parcel-plugin-eslint/-/parcel-plugin-eslint-1.0.3.tgz#c60a801d4d9bcad0a5c6c2ab895ae344d830ace2"
   dependencies:

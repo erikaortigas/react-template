@@ -1,14 +1,30 @@
 # react-template-js
 
+### Pre requisites
+Install
+- node (better installed with nvm)
+- yarn (npm i -g yarn)
 
 ### Running the project
 ```bash
 npm run dev
 ```
 
+We are also supporting parcel, it is currently faster than webpack, but some features (eslint) is not fully supported
+
+parcel support
+```bash
+npm run dev -- --parcel
+```
+
 ### Building
 ```bash
 npm run dev:build
+```
+
+parcel support
+```bash
+npm run dev:build -- --parcel
 ```
 
 ### Testing

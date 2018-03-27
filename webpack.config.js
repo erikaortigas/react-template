@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const config = require('./webpack/config')
 
 const resolve = {
   modules: ['node_modules'],
@@ -63,7 +62,6 @@ const plugins = [
   new webpack.HotModuleReplacementPlugin({quiet: true}),
   new webpack.NamedModulesPlugin(),
   new webpack.NoEmitOnErrorsPlugin(),
-  new webpack.DefinePlugin(config),
   new CopyWebpackPlugin([{
     from: `src/static/${mode}-webpack.html`, to: 'index.html'
   }])

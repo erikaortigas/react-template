@@ -16,6 +16,9 @@ for opt in "$@"; do
     --webpack)
       export DEV_BUNDLER="webpack"
       ;;
+    --parcel)
+      export DEV_BUNDLER="parcel"
+      ;;
   esac
 done
 
@@ -38,7 +41,8 @@ watchMode() {
 
 buildMode() {
   if [ "$DEV_BUNDLER" == "parcel" ]; then
-    parcel build src/static/development.html -d dist
+    parcel build src/static/development.html -d dist --public-url ./
+    mv dist/development.html dist/index.html
   else
     webpack --progress
   fi
