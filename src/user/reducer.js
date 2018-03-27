@@ -1,9 +1,11 @@
 import {reducerOf} from '../common/reducer/reducerOf'
+import {success} from '../common/type/markers'
+import {LOAD_USER} from './type'
 
-const defaultState = () => ({
-  firstName: 'Clyde',
-  lastName: 'Espeno',
-  dateOfBirth: 'January 6, 1990'
-})
+const defaultState = () => null
 
-export const user = reducerOf({})(defaultState)
+const loadUser = () => ({response}) => response
+
+export const user = reducerOf({
+  [success(LOAD_USER)]: loadUser
+})(defaultState)

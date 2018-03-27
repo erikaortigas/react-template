@@ -6,19 +6,32 @@ import Table, {
   TableCell,
   TableRow
 } from 'material-ui/Table'
-import map from 'ramda/src/map'
+import map from 'ramda/es/map'
 import {connect} from 'react-redux'
+import * as actions from './action'
 
-export const UserList = ({users}) =>
-  <div>
-    <Table>
-      {header()}
-      {body(users)}
-    </Table>
-  </div>
+export class UserList extends React.PureComponent {
 
-UserList.propTypes = {
-  users: PropTypes.array.isRequired
+  static propTypes = {
+    users: PropTypes.array.isRequired,
+    loadUsers: PropTypes.func.isRequired
+  }
+
+  componentDidMount() {
+    this.props.loadUsers()
+  }
+
+  render() {
+    return (
+      <div>
+        <Table>
+          {header()}
+          {body(this.props.users)}
+        </Table>
+      </div>
+    )
+  }
+
 }
 
 const header = () =>
@@ -57,4 +70,4 @@ const renderUser = map(({id, name, status}) =>
 
 export default connect((state) => ({
   users: state.users
-}))(UserList)
+}), actions)(UserList)

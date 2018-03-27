@@ -58,6 +58,7 @@ const renderPropRow = map(([key, value]) =>
 const renderProp = compose(renderPropRow, toPairs)
 
 const propertyMapping = {
+  id: 'ID',
   firstName: 'First Name',
   lastName : 'Last Name',
   dateOfBirth: 'Date of Birth'
