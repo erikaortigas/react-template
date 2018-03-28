@@ -1,5 +1,5 @@
-import reduce from 'ramda/es/reduce'
-import toPairs from 'ramda/es/toPairs'
+import reduce from 'ramda/src/reduce'
+import toPairs from 'ramda/src/toPairs'
 import {Future} from 'fluture'
 import {ACTIVE, PENDING} from '../user/status'
 

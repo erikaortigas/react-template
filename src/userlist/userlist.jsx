@@ -6,7 +6,7 @@ import Table, {
   TableCell,
   TableRow
 } from 'material-ui/Table'
-import map from 'ramda/es/map'
+import map from 'ramda/src/map'
 import {connect} from 'react-redux'
 import * as actions from './action'
 

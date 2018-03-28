@@ -10,10 +10,10 @@ import PropTypes from 'prop-types'
 import {JSDOM} from 'jsdom'
 import module from 'module'
 import {URLSearchParams} from 'url'
-import reduce from 'ramda/es/reduce'
-import compose from 'ramda/es/compose'
-import toPairs from 'ramda/es/toPairs'
-import is from 'ramda/es/is'
+import reduce from 'ramda/src/reduce'
+import compose from 'ramda/src/compose'
+import toPairs from 'ramda/src/toPairs'
+import is from 'ramda/src/is'
 
 chai.use(dirtyChai)
 chai.use(sinonChai)

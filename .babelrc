@@ -1,23 +1,25 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": [
-            "last 2 versions",
-            "safari >= 7"
-          ],
-          "node": "current"
-        },
-        "modules": false
-      }
-    ],
-    "react",
-    "stage-0"
-  ],
-  "plugins": ["transform-inline-environment-variables", "transform-class-properties"],
   "env": {
+    "build": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "safari >= 7"
+              ],
+              "node": "current"
+            },
+            "modules": false
+          }
+        ],
+        "react",
+        "stage-0"
+      ],
+      "plugins": ["transform-inline-environment-variables", "transform-class-properties"]
+    },
     "test": {
       "presets": [
         [

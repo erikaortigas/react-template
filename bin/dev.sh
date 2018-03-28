@@ -31,6 +31,8 @@ echo "****************************"
 export CONFIG_SERVICE_USER=${CONFIG_SERVICE_USER:-"http://localhost:3001"}
 export NODE_ENV=development
 
+export BABEL_ENV="build"
+
 watchMode() {
   if [ "$DEV_BUNDLER" == "parcel" ]; then
     parcel -p 8080 src/static/development.html
