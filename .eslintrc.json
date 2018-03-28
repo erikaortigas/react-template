@@ -87,6 +87,7 @@
     "react/jsx-no-literals": "off",
     "react/jsx-first-prop-new-line": "off",
     "react/jsx-max-props-per-line": ["error", {"maximum": 3}],
+    "react/display-name": "off",
     "react/jsx-no-bind": [
       "error",
       {

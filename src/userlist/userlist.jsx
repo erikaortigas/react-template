@@ -50,7 +50,6 @@ const header = () =>
     </TableRow>
   </TableHead>
 
-// eslint-disable-next-line react/display-name
 const body = (history) => (users) =>
   <TableBody displayRowCheckbox={false}>
     {renderUser(loadUser(history))(users)}
