@@ -31,6 +31,12 @@ echo "****************************"
 export CONFIG_SERVICE_USER=${CONFIG_SERVICE_USER:-"http://localhost:3001"}
 export NODE_ENV=development
 
+echo ""
+echo "**********CONFIG***********"
+echo "CONFIG_SERVICE_USER: ${CONFIG_SERVICE_USER}"
+echo "NODE_ENV:            ${NODE_ENV}"
+echo "****************************"
+
 export BABEL_ENV="build"
 
 watchMode() {

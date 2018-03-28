@@ -1,27 +1,12 @@
 import reduce from 'ramda/src/reduce'
 import toPairs from 'ramda/src/toPairs'
-import {Future} from 'fluture'
-import {ACTIVE, PENDING} from '../user/status'
+import compose from 'redux/src/compose'
+import * as user from './user'
 
-export const user = () => ({
-  get: (id) => Future.of({
-    id,
-    firstName: `first-${id}`,
-    lastName: `last-${id}`,
-    dateOfBirth: (new Date()).toString()
-  }),
-  getAll: () => Future.of([{
-    name: 'Surya',
-    id: '1',
-    status: ACTIVE
-  }, {
-    name: 'Clyde',
-    id: '2',
-    status: PENDING
-  }])
-})
+const inject = (deps) =>
+  compose(reduce((injected, [key, api]) => ({...injected, [key]: api(deps)}), {}), toPairs)
 
-export const api = (config) =>
-  reduce((api, [key, apiFn]) => ({...api, [key]: apiFn(config)}), {}, toPairs({
+export const api = (deps) =>
+  reduce((api, [key, apis]) => ({...api, [key]: inject(deps)(apis)}), {}, toPairs({
     user
   }))

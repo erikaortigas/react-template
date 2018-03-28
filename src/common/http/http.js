@@ -38,9 +38,18 @@ const body = (body) => {
   return undefined
 }
 
-export const createClient = (fetch) => (opts) => tryP(() => fetch(opts.url, {
+const promiseProxy = (fn) => () => tryP(() => fn())
+
+const responseProxy = (r) => new Proxy(r, {
+  get: (r, prop) => typeof r[prop] === 'function' ? promiseProxy(r[prop]) : r[prop]
+})
+
+const request = (fetch) => (opts) => () => fetch(opts.url, {
   ...body(opts.body),
   ...headers(opts),
   ...opts.options,
   method: opts.method
-}))
+}).then(responseProxy)
+
+export const createClient = (fetch) => (opts) => tryP(request(fetch)(opts))
+
