@@ -17,6 +17,10 @@ export class UserList extends React.PureComponent {
     loadUsers: PropTypes.func.isRequired
   }
 
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
+
   componentDidMount() {
     this.props.loadUsers()
   }
@@ -26,7 +30,7 @@ export class UserList extends React.PureComponent {
       <div>
         <Table>
           {header()}
-          {body(this.props.users)}
+          {body(this.context.router.history)(this.props.users)}
         </Table>
       </div>
     )
@@ -43,30 +47,27 @@ const header = () =>
       <TableCell>
         Name
       </TableCell>
-      <TableCell>
-        Status
-      </TableCell>
     </TableRow>
   </TableHead>
 
-const body = (users) =>
+// eslint-disable-next-line react/display-name
+const body = (history) => (users) =>
   <TableBody displayRowCheckbox={false}>
-    {renderUser(users)}
+    {renderUser(loadUser(history))(users)}
   </TableBody>
 
-const renderUser = map(({id, name, status}) =>
-  <TableRow>
+const renderUser = (loadUser) => map(({id, firstName}) =>
+  <TableRow key={id} onClick={loadUser(id)}>
     <TableCell>
       {id}
     </TableCell>
     <TableCell>
-      {name}
-    </TableCell>
-    <TableCell>
-      {status}
+      {firstName}
     </TableCell>
   </TableRow>
 )
+
+const loadUser = (history) => (id) => () => history.push(`/user/${id}`)
 
 export default connect((state) => ({
   users: state.users

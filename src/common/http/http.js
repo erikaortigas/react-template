@@ -38,10 +38,10 @@ const body = (body) => {
   return undefined
 }
 
-const promiseProxy = (fn) => () => tryP(() => fn())
+const promiseProxy = (r, prop) => () => tryP(() => r[prop]())
 
 const responseProxy = (r) => new Proxy(r, {
-  get: (r, prop) => typeof r[prop] === 'function' ? promiseProxy(r[prop]) : r[prop]
+  get: (r, prop) => typeof r[prop] === 'function' ? promiseProxy(r, prop) : r[prop]
 })
 
 const request = (fetch) => (opts) => () => fetch(opts.url, {

@@ -28,7 +28,7 @@ echo "bundler:    ${DEV_BUNDLER}"
 echo "****************************"
 
 # initialize config here
-export CONFIG_SERVICE_USER=${CONFIG_SERVICE_USER:-"http://localhost:3001"}
+export CONFIG_SERVICE_USER=${CONFIG_SERVICE_USER:-"http://localhost:3000"}
 export NODE_ENV=development
 
 echo ""

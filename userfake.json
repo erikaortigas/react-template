@@ -1,0 +1,14 @@
+{
+  "user": [{
+    "firstName": "Surya",
+    "lastName": "Dharma",
+    "id": "1",
+    "dateOfBirth": "19XX"
+  }, {
+    "firstName": "Clyde",
+    "lastName": "Espeno",
+    "dateOfBirth": "199X",
+    "id": "2"
+  }]
+
+}

@@ -42,3 +42,16 @@ Run single test in terminal
 ```bash
 npm run test:only src/sample.test.js
 ```   
+
+### Fake Api
+
+install json-server if not installed
+
+```
+npm i -g json-server
+```
+
+run the json-server
+```
+json-server --watch userfake.json
+```
